@@ -1,0 +1,30 @@
+  <HTML>
+    <HEAD>
+    <script type="text/javascript" src="sessionvars.js"></script>
+      <TITLE>List of Replica Sets of the user</TITLE>
+    </HEAD>
+
+
+    <BODY>
+
+      #set( $count = 1 )  
+      <TABLE  border="1">
+        <tr>
+          <th>#</th>
+          <th>ReplicaSet ID</th>
+        </tr>
+        #foreach( $rs in $rsList )
+          <TR  style="border-bottom:1px solid black">
+            <TD>$count</TD>
+            <TD><a href="retrieveRs?replicaSetID=$rs">$rs</a></TD>
+            </script>
+          </TR>
+          #set( $count = $count + 1 )
+        #end
+      </TABLE>
+<CENTER>
+       <button type="button"  onclick="location.href='updateReplicaSet.html' ">Update Replica Set</button>
+</CENTER>
+
+    </BODY>
+  </HTML>
